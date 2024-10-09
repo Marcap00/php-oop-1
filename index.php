@@ -15,8 +15,8 @@ $actionComedy = new Genre(['Action', 'Comedy']);
 ];*/
 
 
-$theAvengers = new Movie('The Avengers', 'Joss Whedon', 2012, $actionComedy);
-$theAvengersAgeOfUltron = new Movie('The Avengers: Age of Ultron', 'Joss Whedon', 2015, $actionComedy);
+$theAvengers = new Movie('The Avengers', 'Joss Whedon', 2012, $action);
+$theAvengersAgeOfUltron = new Movie('The Avengers: Age of Ultron', 'Joss Whedon', 2015, $action);
 $movies = [
     $theAvengers,
     $theAvengersAgeOfUltron
