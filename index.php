@@ -5,15 +5,15 @@ require_once __DIR__ . '/classes/Genre.php';
 $action = new Genre('Action');
 $comedy = new Genre('Comedy');
 $horror = new Genre('Horror');
-$genres = [
+/*$genres = [
     $action,
     $comedy,
     $horror
-];
+];*/
 
 
-$theAvengers = new Movie('The Avengers', 'Joss Whedon', 2012, $genres[0]);
-$theAvengersAgeOfUltron = new Movie('The Avengers: Age of Ultron', 'Joss Whedon', 2015, $genres[0]);
+$theAvengers = new Movie('The Avengers', 'Joss Whedon', 2012, $action);
+$theAvengersAgeOfUltron = new Movie('The Avengers: Age of Ultron', 'Joss Whedon', 2015, $action);
 $movies = [
     $theAvengers,
     $theAvengersAgeOfUltron
@@ -52,7 +52,7 @@ $movies = [
                             Year: <?= $movie->year; ?>
                         </li>
                         <li>
-                            Genere: <?= $movie->genre->getGenre(); ?>
+                            Genere: <?= $movie->genre->getName(); ?>
                         </li>
                         <li>Descrizione: <?= $movie->getDescription() ?></li>
                     </ul>

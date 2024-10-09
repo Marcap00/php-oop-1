@@ -1,4 +1,5 @@
 <?php
+require_once 'Genre.php';
 
 class Movie
 {
@@ -22,17 +23,13 @@ class Movie
     }
 
     // Metodi
+
     public function getDescription(): string
     {
         return "
-        Il titolo di questo film è: $this->title 
-        <br> 
-        Il suo autore è: $this->author 
-        <br> 
-        E' stato prodotto nell'anno: $this->year 
-        <br> 
-        
+        lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         ";
-        /* Appartiene al genere: $this->genre */
     }
 }
