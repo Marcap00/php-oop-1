@@ -55,7 +55,7 @@ $movies = [
                         </li>
                         <li>
                             Genre:
-                            <?php foreach ($movie->genre as $genre) : ?>
+                            <?php foreach ($movie->genres as $genre) : ?>
                             <span>
                                 <?= $genre ?>
                             </span>

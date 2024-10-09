@@ -7,19 +7,19 @@ class Movie
     public string $title;
     public string $author;
     public int $year;
-    public array $genre;
+    public array $genres;
 
     // Costruttore 
     public function __construct(
         $title,
         $author,
         $year,
-        $genre
+        $genres
     ) {
         $this->title = $title;
         $this->author = $author;
         $this->year = $year;
-        $this->genre = $genre;
+        $this->genres = $genres;
     }
 
     // Metodi
