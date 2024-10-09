@@ -7,7 +7,7 @@ require_once __DIR__ . '/classes/Genre.php';
 $action = new Genre('Action');
 $comedy = new Genre('Comedy');
 $horror = new Genre('Horror');
-$actionComedy = new Genre(['Action, Comedy']);
+$actionComedy = new Genre(['Action', 'Comedy']);
 /*$genres = [
     $action,
     $comedy,

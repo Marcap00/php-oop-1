@@ -24,7 +24,7 @@ class Movie
     // Metodi
     public function getGenres($array): string
     {
-        $stringGenres = implode($array);
+        $stringGenres = implode(', ', $array);
         return $stringGenres;
     }
 
