@@ -1,3 +1,14 @@
+<?php
+require_once __DIR__ . '/classes/Movie.php';
+$theAvengers = new Movie('The Avengers', 'Joss Whedon', 2012, 'Action');
+$theAvengersAgeOfUltron = new Movie('The Avengers: Age of Ultron', 'Joss Whedon', 2015, 'Action');
+$movies = [
+    $theAvengers,
+    $theAvengersAgeOfUltron
+];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +25,31 @@
 </head>
 
 <body>
-    <h1>Hello world!</h1>
+    <main>
+        <div class="container">
+            <h1 class="text-center">Movies</h1>
+            <ul>
+                <?php foreach ($movies as $movie) : ?>
+                <li>
+                    <h2><?= $movie->title; ?></h2>
+                    <ul>
+                        <li>
+                            Author: <?= $movie->author; ?>
+                        </li>
+                        <li>
+                            Year: <?= $movie->year; ?>
+                        </li>
+                        <li>
+                            Genere: <?= $movie->genre; ?>
+                        </li>
+                        <li><?= $movie->getDescription() ?></li>
+                    </ul>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
 
+    </main>
 </body>
 
 </html>
