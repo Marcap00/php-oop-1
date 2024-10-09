@@ -1,7 +1,14 @@
 <?php
 require_once __DIR__ . '/classes/Movie.php';
-$theAvengers = new Movie('The Avengers', 'Joss Whedon', 2012, 'Action');
-$theAvengersAgeOfUltron = new Movie('The Avengers: Age of Ultron', 'Joss Whedon', 2015, 'Action');
+require_once __DIR__ . '/classes/Genre.php';
+
+$action = new Genre('Action');
+$comedy = new Genre('Comedy');
+$horror = new Genre('Horror');
+
+
+$theAvengers = new Movie('The Avengers', 'Joss Whedon', 2012, $action);
+$theAvengersAgeOfUltron = new Movie('The Avengers: Age of Ultron', 'Joss Whedon', 2015, $action);
 $movies = [
     $theAvengers,
     $theAvengersAgeOfUltron
@@ -40,9 +47,9 @@ $movies = [
                             Year: <?= $movie->year; ?>
                         </li>
                         <li>
-                            Genere: <?= $movie->genre; ?>
+                            Genere: <?= $movie->genre->getGenre(); ?>
                         </li>
-                        <li><?= $movie->getDescription() ?></li>
+                        <li>Descrizione: <?= $movie->getDescription() ?></li>
                     </ul>
                 </li>
                 <?php endforeach; ?>
