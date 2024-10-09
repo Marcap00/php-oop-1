@@ -1,16 +1,16 @@
 <?php
 class Genre
 {
-    public array $names;
+    public  $name;
 
     public function __construct(
-        $names
+        $name
     ) {
-        $this->names = $names;
+        $this->name = $name;
     }
 
-    public function getNames()
+    public function getName()
     {
-        return $this->names;
+        return $this->name;
     }
 }

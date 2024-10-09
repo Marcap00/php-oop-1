@@ -1,5 +1,4 @@
 <?php
-require_once 'Genre.php';
 
 class Movie
 {
@@ -7,7 +6,7 @@ class Movie
     public string $title;
     public string $author;
     public int $year;
-    public array $genres;
+    public Genre $genres;
 
     // Costruttore 
     public function __construct(
@@ -23,6 +22,11 @@ class Movie
     }
 
     // Metodi
+    public function getGenres($array): string
+    {
+        $stringGenres = implode($array);
+        return $stringGenres;
+    }
 
     public function getDescription(): string
     {

@@ -2,11 +2,12 @@
 require_once __DIR__ . '/classes/Movie.php';
 require_once __DIR__ . '/classes/Genre.php';
 
-$actionComedy = new Genre(['Action', 'Comedy']);
-$horrorComedy = new Genre(['Horror', 'Comedy']);
-
-// $comedy = new Genre('Comedy');
-// $horror = new Genre('Horror');
+// $actionComedy = new Genre(['Action', 'Comedy']);
+// $horrorComedy = new Genre(['Horror', 'Comedy']);
+$action = new Genre('Action');
+$comedy = new Genre('Comedy');
+$horror = new Genre('Horror');
+$actionComedy = new Genre(['Action, Comedy']);
 /*$genres = [
     $action,
     $comedy,
@@ -14,8 +15,8 @@ $horrorComedy = new Genre(['Horror', 'Comedy']);
 ];*/
 
 
-$theAvengers = new Movie('The Avengers', 'Joss Whedon', 2012, $actionComedy->getNames());
-$theAvengersAgeOfUltron = new Movie('The Avengers: Age of Ultron', 'Joss Whedon', 2015, $actionComedy->getNames());
+$theAvengers = new Movie('The Avengers', 'Joss Whedon', 2012, $actionComedy);
+$theAvengersAgeOfUltron = new Movie('The Avengers: Age of Ultron', 'Joss Whedon', 2015, $actionComedy);
 $movies = [
     $theAvengers,
     $theAvengersAgeOfUltron
@@ -44,26 +45,26 @@ $movies = [
             <h1 class="text-center">Movies</h1>
             <ul>
                 <?php foreach ($movies as $movie) : ?>
-                <li>
-                    <h2><?= $movie->title; ?></h2>
-                    <ul>
-                        <li>
-                            Author: <?= $movie->author; ?>
-                        </li>
-                        <li>
-                            Year: <?= $movie->year; ?>
-                        </li>
-                        <li>
-                            Genre:
-                            <?php foreach ($movie->genres as $genre) : ?>
-                            <span>
-                                <?= $genre ?>
-                            </span>
-                            <?php endforeach; ?>
-                        </li>
-                        <li>Description: <?= $movie->getDescription() ?></li>
-                    </ul>
-                </li>
+                    <li>
+                        <h2><?= $movie->title; ?></h2>
+                        <ul>
+                            <li>
+                                Author: <?= $movie->author; ?>
+                            </li>
+                            <li>
+                                Year: <?= $movie->year; ?>
+                            </li>
+                            <li>
+                                Genre:
+                                <?php foreach ($movie->genres as $genre) : ?>
+                                    <span>
+                                        <?= $movie->getGenres($genre); ?>
+                                    </span>
+                                <?php endforeach; ?>
+                            </li>
+                            <li>Description: <?= $movie->getDescription() ?></li>
+                        </ul>
+                    </li>
                 <?php endforeach; ?>
             </ul>
         </div>
