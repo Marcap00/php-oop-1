@@ -2,9 +2,11 @@
 require_once __DIR__ . '/classes/Movie.php';
 require_once __DIR__ . '/classes/Genre.php';
 
-$action = new Genre('Action');
-$comedy = new Genre('Comedy');
-$horror = new Genre('Horror');
+$actionComedy = new Genre(['Action', 'Comedy']);
+$horrorComedy = new Genre(['Horror', 'Comedy']);
+
+// $comedy = new Genre('Comedy');
+// $horror = new Genre('Horror');
 /*$genres = [
     $action,
     $comedy,
@@ -12,8 +14,8 @@ $horror = new Genre('Horror');
 ];*/
 
 
-$theAvengers = new Movie('The Avengers', 'Joss Whedon', 2012, $action);
-$theAvengersAgeOfUltron = new Movie('The Avengers: Age of Ultron', 'Joss Whedon', 2015, $action);
+$theAvengers = new Movie('The Avengers', 'Joss Whedon', 2012, $actionComedy->getNames());
+$theAvengersAgeOfUltron = new Movie('The Avengers: Age of Ultron', 'Joss Whedon', 2015, $actionComedy->getNames());
 $movies = [
     $theAvengers,
     $theAvengersAgeOfUltron
@@ -52,9 +54,14 @@ $movies = [
                             Year: <?= $movie->year; ?>
                         </li>
                         <li>
-                            Genere: <?= $movie->genre->getName(); ?>
+                            Genre:
+                            <?php foreach ($movie->genre as $genre) : ?>
+                            <span>
+                                <?= $genre ?>
+                            </span>
+                            <?php endforeach; ?>
                         </li>
-                        <li>Descrizione: <?= $movie->getDescription() ?></li>
+                        <li>Description: <?= $movie->getDescription() ?></li>
                     </ul>
                 </li>
                 <?php endforeach; ?>

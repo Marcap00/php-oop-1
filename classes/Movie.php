@@ -7,7 +7,7 @@ class Movie
     public string $title;
     public string $author;
     public int $year;
-    public Genre $genre;
+    public array $genre;
 
     // Costruttore 
     public function __construct(
